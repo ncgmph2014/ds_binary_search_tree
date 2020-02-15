@@ -8,7 +8,8 @@ class Node {
   }
 }
 
-class BST { //bst stands for binary search tree
+class BST {
+  //bst stands for binary search tree
   constructor() {
     this.root = null;
   }
@@ -40,39 +41,40 @@ class BST { //bst stands for binary search tree
           return null;
         }
       };
+      return searchTree(node);
     }
-    return searchTree(node);
   }
-}
-
-findMin(){ //because the smaller numbers go to the left
-let current=this.root;
-while(current.left !== null){
-    current =current.left;
-}
-return current.data;
-}
-
-//for some reason, findMax() doesn't work
-findMax(){//because larger numners go to the right
-    let current=this.root;
-    while(current.right !==null){
-        current = current.right;
+  //these functions work now; before they wouldn't because i didn't include them in the class
+  findMin() {
+    //because the smaller numbers go to the left
+    let current = this.root;
+    while (current.left !== null) {
+      current = current.left;
     }
     return current.data;
-}
+  }
 
-isPresent(data){
+  findMax() {
+    //because larger numners go to the right
     let current = this.root;
-    while(current){
-        if(data=== current.data){
-            return true;
-        }
+    while (current.right !== null) {
+      current = current.right;
     }
-    if(data<current.data){
-        current = current.left;
-    }else{
-        current.right;
+    return current.data;
+  }
+
+  isPresent(data) {
+    let current = this.root;
+    while (current) {
+      if (data === current.data) {
+        return true;
+      }
+    }
+    if (data < current.data) {
+      current = current.left;
+    } else {
+      current.right;
     }
     return false;
+  }
 }
