@@ -45,10 +45,18 @@ class BST {
   }
 }
 
-findMin(){
+findMin(){ //because the smaller numbers go to the left
 let current=this.root;
 while(current.left !== null){
     current =current.left;
 }
 return current.data;
+}
+
+findMax(){//because larger numners go to the right
+    let current=this.root;
+    while(current.right !==null){
+        current = current.right;
+    }
+    return current.data;
 }
