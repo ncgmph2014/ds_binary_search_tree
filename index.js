@@ -8,7 +8,7 @@ class Node {
   }
 }
 
-class BST {
+class BST { //bst stands for binary search tree
   constructor() {
     this.root = null;
   }
@@ -53,10 +53,26 @@ while(current.left !== null){
 return current.data;
 }
 
+//for some reason, findMax() doesn't work
 findMax(){//because larger numners go to the right
     let current=this.root;
     while(current.right !==null){
         current = current.right;
     }
     return current.data;
+}
+
+isPresent(data){
+    let current = this.root;
+    while(current){
+        if(data=== current.data){
+            return true;
+        }
+    }
+    if(data<current.data){
+        current = current.left;
+    }else{
+        current.right;
+    }
+    return false;
 }
