@@ -20,7 +20,7 @@ class BST {
     } else {
       const searchTree = function(node) {
         if (data < node.data) {
-          //basically this means this should be the left side
+          //new nodes that are less than the parent are like beyonce, because they go to the left, to the left.
           if (node.left === null) {
             //if there is nothing to the left, put something to the left
             node.left = new Node(data);
@@ -43,4 +43,12 @@ class BST {
     }
     return searchTree(node);
   }
+}
+
+findMin(){
+let current=this.root;
+while(current.left !== null){
+    current =current.left;
+}
+return current.data;
 }
