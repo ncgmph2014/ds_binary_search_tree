@@ -102,7 +102,7 @@ class BST {
         node.right = removeNode(node.right, tempNode.data);
         return node;
       } else if (data < node.data) {
-        node.left = remodeNode(node.left, data);
+        node.left = removeNode(node.left, data);
         return node;
       } else {
         node.right = removeNode(node.right, data);
@@ -112,3 +112,14 @@ class BST {
     this.root = removeNode(this.root, data);
   }
 }
+
+const bst = new BST();
+
+bst.add(4);
+bst.add(2);
+bst.add(6);
+bst.add(1);
+bst.add(3);
+bst.add(5);
+bst.add(7);
+bst.remove(4);
